@@ -1,0 +1,54 @@
+= javascript_include_tag 'alarms.js'
+= javascript_include_tag 'jquery-1.2.6.min.js'
+%div Alarm Definition:
+%div{ :style => "border: 1px dotted black; padding: 8px; margin: 4px;" }
+  %table{ :border => 0 }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Host
+      %td
+        %input{ :name => "host", :id => "host", :style => 'width: 450px', :value => @alarm_def.host }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Plugin
+      %td
+        %input{ :name => "plugin", :id => "plugin", :style => 'width: 450px', :value => @alarm_def.plugin }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Type
+      %td
+        %input{ :name => "type", :id => "type", :style => 'width: 450px', :value => @alarm_def.type }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Data Source
+      %td
+        %input{ :name => "data_source", :id => "data_source", :style => 'width: 450px', :value => @alarm_def.data_source }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Warning Range [<a target="_blank" href="http://collectd.org/documentation/manpages/collectd-nagios.1.shtml#item__2dc_range">?</a>]
+      %td
+        %input{ :name => "warning_range", :id => "warning_range", :style => 'width: 450px', :value => @alarm_def.warning_range }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Warning Duration Threshold (s)
+      %td
+        %input{ :name => "warning_duration_threshold", :id => "warning_duration_threshold", :style => 'width: 450px', :value => @alarm_def.warning_duration_threshold }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Critical Range [<a target="_blank" href="http://collectd.org/documentation/manpages/collectd-nagios.1.shtml#item__2dc_range">?</a>]
+      %td
+        %input{ :name => "critical_range", :id => "critical_range", :style => 'width: 450px', :value => @alarm_def.critical_range }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Critical Duration Threshold (s)
+      %td
+        %input{ :name => "critical_duration_threshold", :id => "critical_duration_threshold", :style => 'width: 450px', :value => @alarm_def.critical_duration_threshold }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Message Format
+      %td
+        %input{ :name => "message_format", :id => "message_format", :style => 'width: 450px', :value => @alarm_def.message_format }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Page
+      %td
+        %input{ :name => "action", :id => "action", :style => 'width: 450px', :value => @alarm_def.action }
+    %tr
+      %td{ :class => 'alarm', :style => 'width: 100px' } Disabled
+      %td
+        %input{ :name => "disabled", :id => "disabled", :style => 'width: 450px', :value => @alarm_def.disabled ? 'true' : 'false' }
+%div{ :style => 'text-align: center; margin-top: 8px' }
+  %input{ :type => :submit, :value => 'Save', :onClick => "javascript:alarms.addAlarm(#{@alarm_def.id}, $('input[name=host]').val(), $('input[name=plugin]').val(), $('input[name=type]').val(), $('input[name=data_source]').val(), $('input[name=warning_range]').val(), $('input[name=warning_duration_threshold]').val(), $('input[name=critical_range]').val(), $('input[name=critical_duration_threshold]').val(), $('input[name=message_format]').val(), $('input[name=action]').val(), $('input[name=disabled]').val())" }
+:javascript
+  var alarms = new Alarms();
+  $(function() { alarms.init();  } );

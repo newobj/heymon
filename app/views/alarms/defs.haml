@@ -1,0 +1,31 @@
+= javascript_include_tag 'thickbox-compressed.js'
+= stylesheet_link_tag 'thickbox'
+%table{ :style => 'border: 2px solid black; border-bottom: 1px solid black; margin: 2px 0px 8px 0px; padding: 0px', :cellpadding => 0, :cellspacing => 0 }
+  %tr
+    %th{ :class => 'alarm host' }== Host
+    %th{ :class => 'alarm plugin' }== Plugin
+    %th{ :class => 'alarm type' }== Type
+    %th{ :class => 'alarm data_source' }== Data Source
+    %th{ :class => 'alarm warning_range' }== Warning Range
+    %th{ :class => 'alarm warning_range' }== Warning Threshold
+    %th{ :class => 'alarm critical_range' }== Critical Range
+    %th{ :class => 'alarm critical_range' }== Critical Threshold
+    %th{ :class => 'alarm critical_range' }== Message Format
+    %th{ :class => 'alarm critical_range' }== Page?
+    %th{ :class => 'alarm critical_range' }== Edit
+    %th{ :class => 'alarm critical_range' }== Explore
+  - @alarm_defs.each do |a|
+    %tr
+      %td{ :class => 'alarm host' }== &nbsp;#{a.host}
+      %td{ :class => 'alarm plugin' }== &nbsp;#{a.plugin}
+      %td{ :class => 'alarm type' }== &nbsp;#{a.type}
+      %td{ :class => 'alarm data_source' }== &nbsp;#{a.data_source}
+      %td{ :class => 'alarm warning_range' }== &nbsp;#{a.warning_range}
+      %td{ :class => 'alarm warning_range' }== &nbsp;#{a.warning_duration_threshold}
+      %td{ :class => 'alarm critical_range' }== &nbsp;#{a.critical_range}
+      %td{ :class => 'alarm critical_range' }== &nbsp;#{a.critical_duration_threshold}
+      %td{ :class => 'alarm critical_range' }== &nbsp;#{a.message_format}
+      %td{ :class => 'alarm disabled' }== &nbsp;#{a.action} 
+      %td{ :class => 'alarm disabled', :style => 'text-align: center;' }= link_to '<img border=0 src="/images/page_edit.gif"/>', "/alarms/edit_alarm/#{a.id}", { :class => 'thickbox', :title =>  "Edit alarm for #{a.host} / #{a.plugin} / #{a.type} / #{a.data_source}" }
+      %td{ :class => 'alarm disabled', :style => 'text-align: center' }= link_to '<img border=0 src="/images/page_right.gif"/>', "/explore/?host=#{CGI.escape(a.host)}&plugin=#{CGI.escape(a.plugin)}&type=#{CGI.escape(a.type)}&ds=#{CGI.escape(a.data_source)}"
+<a title="Add New Alarm" class="thickbox" href="/alarms/add_alarm?">add new alarm</a>

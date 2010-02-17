@@ -1,0 +1,50 @@
+= javascript_include_tag 'explore.js'
+= javascript_include_tag 'alarms.js'
+= javascript_include_tag 'thickbox-compressed.js'
+= stylesheet_link_tag 'thickbox'
+- form_tag do
+  %img#explore_graph{ :src => '/images/1.gif' }
+  #explore_status
+    Query matches
+    %span#explore_matches ???
+    metrics. 
+    [ 
+    = link_to 'refresh graph', 'javascript:explore.refreshGraph();'
+    |
+    <a title="Add Query to Dashboard" class="thickbox dashboard" href="#">add query to dashboard</a>
+    |
+    <a title="Add Alarm on Query" class="thickbox alarm" href="#">add alarm on query</a>
+    ]
+    #explore_warning
+      (WARNING: It is advised not to graph more than 20 metrics at once!)
+  #explore_host_input
+    .explore_field_label
+      == Host
+      = link_to '[reset]', "javascript:explore.setTerm('host', '.*');alarms.onKeyup();"
+    = text_field_tag 'host', @host, { :class => 'explore_input' }
+    #hosts
+  #explore_plugin_input
+    .explore_field_label
+      == Plugin
+      = link_to '[reset]', "javascript:explore.setTerm('plugin', '.*');alarms.onKeyup();"
+    = text_field_tag 'plugin', @plugin, { :class => 'explore_input' }
+    #plugins
+  #explore_type_input
+    .explore_field_label
+      == Type
+      = link_to '[reset]', "javascript:explore.setTerm('type', '.*');alarms.onKeyup();"
+    = text_field_tag 'type', @type, { :class => 'explore_input' }
+    #types
+  #explore_ds_input
+    .explore_field_label
+      == Data Source
+      = link_to '[reset]', "javascript:explore.setTerm('ds', '.*');alarms.onKeyup();"
+    = text_field_tag 'ds', @ds, { :class => 'explore_input' }
+    #dataSources
+  #ajaxMessage== &nbsp;
+:javascript
+  var explore = new Explore();
+  $(function() { explore.init();  } );
+  var alarms = new Alarms();
+  $(function() { alarms.init();  } );
+  

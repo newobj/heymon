@@ -1,0 +1,23 @@
+{ 
+  "hosts": [
+  <% @all_hosts.each do |host| %>
+   { "value": "<%= host -%>", <%= state_json_helper @matched_hosts, @valid_hosts, host -%> },
+  <% end %>
+  ],
+  "plugins": [
+  <% @all_plugins.each do |plugin| %>
+   { "value": "<%= plugin -%>", <%= state_json_helper @matched_plugins, @valid_plugins, plugin -%> },
+  <% end %>
+  ],
+  "types": [
+  <% @all_types.each do |type| %>
+   { "value": "<%= type -%>", <%= state_json_helper @matched_types, @valid_types, type -%> },
+  <% end %>
+  ],
+  "dataSources": [
+  <% @all_data_sources.each do |data_source| %>
+   { "value": "<%= data_source -%>", <%= state_json_helper @matched_data_sources, @valid_data_sources, data_source -%> },
+  <% end %>
+  ],
+  "matches": <%= @matched_rrds.size -%>
+}

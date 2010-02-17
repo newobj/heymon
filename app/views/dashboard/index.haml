@@ -1,0 +1,10 @@
+%table.dashboards{ :border => 0, :cellpadding => 0, :cellspacing => 0 }
+  - @dashboard_groups.keys.sort.each do |group_name|
+    %tr.dashboards
+      %td.dashboards= group_name
+    %tr.dashboards
+      %td.dashboards
+        = @dashboard_groups[group_name].sort{ |d1,d2| d1.name <=> d2.name }.collect{ |d| link_to d.name, :action => :view, :controller => :dashboard, :id => d.id } * ", "
+:javascript
+  $(function() { $("tr:even").addClass("even") } );
+  $(function() { $("tr:odd").addClass("odd") } );

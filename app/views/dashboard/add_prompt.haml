@@ -1,0 +1,26 @@
+= javascript_include_tag 'dashboard.js'
+= javascript_include_tag 'jquery-1.2.6.min.js'
+%div Save the following query : 
+%div{ :style => "border: 1px dotted black; padding: 8px; margin: 4px;" }
+  %b Host:
+  = @host
+  %br
+  %b Plugin:
+  = @plugin
+  %br
+  %b Type:
+  = @type
+  %br
+  %b Data Source:
+  = @data_source
+%div  Dashboard : 
+%div{ :style => "border: 1px dotted black; padding: 8px; margin: 4px;" }
+  %select{ :name => "dashboard", :id => "dashboard" }
+    %option{ :value => "-1" } New dashboard
+    - @dashboards.each do |dashboard|
+      %option{ :value => dashboard.id }== #{dashboard.group} : #{dashboard.name}
+%div{ :style => 'text-align: center; margin-top: 8px' }
+  %input{ :type => :submit, :value => 'Add Graph', :onClick => "javascript:dashboard.addGraph($('select[name=dashboard]').val(), e('#{@host}'),e('#{@plugin}'), e('#{@type}'), e('#{@data_source}'))" }
+:javascript
+  var dashboard = new Dashboard();
+  $(function() { dashboard.init();  } );

@@ -1,0 +1,20 @@
+%html
+  %head
+    %title== HEYMON - #{@controller.controller_name.upcase}
+    = stylesheet_link_tag 'default'
+    = javascript_include_tag 'jquery-1.2.6.min.js'
+  %body
+    #body_right
+      = image_tag 'heymon.jpg', { :width => 200 }
+      = render :partial => "sidebar"
+    #body_left
+      - @controllers = { 'explorer' => '/explore', 'dashboards' => '/dashboard', 'alarms' => '/alarms', 'alarm defs' => '/alarms/defs' }
+      %h1{ :style => 'display: inline' }
+        HEYMON.dotspots.com
+      [
+      - @controllers.each do |label, url|
+        = link_to label, url
+        = "|" if label != @controllers.keys.last 
+      ]
+      #content_for_layout= @content_for_layout
+    #body_footer== Privileged &amp; Confidential - DotSpots, Inc - #{ Time.now.year }

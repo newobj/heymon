@@ -1,0 +1,29 @@
+= javascript_include_tag 'thickbox-compressed.js'
+= stylesheet_link_tag 'thickbox'
+%table{ :style => 'border: 2px solid black; border-bottom: 1px solid black; margin: 2px 0px 8px 0px; padding: 0px', :cellpadding => 0, :cellspacing => 0 }
+  %tr
+    %th{ :class => 'alarm host' }== Severity
+    %th{ :class => 'alarm last_changed' }== Alarm Trend
+    %th{ :class => 'alarm host' }== Host
+    %th{ :class => 'alarm plugin' }== Plugin
+    %th{ :class => 'alarm type' }== Type
+    %th{ :class => 'alarm type' }== Data Source
+    %th{ :class => 'alarm type' }== Value
+    %th{ :class => 'alarm last_changed' }== Sampled At
+    %th{ :class => 'alarm explore' }== Explore
+  - @alarms.each do |a|
+    %tr
+      %td{ :class => 'alarm severity', :style => "background-color: #{ a.severity =='CRITICAL' ? '#ff0000' : (a.severity == 'WARNING' ? '#ffff00' : '#00ff00') }" }== #{a.severity}
+      %td{ :class => 'alarm last_changed' }= a.alarm_trend
+      %td{ :class => 'alarm host' }= a.host
+      %td{ :class => 'alarm plugin' }= a.plugin
+      %td{ :class => 'alarm type' }= a.type
+      %td{ :class => 'alarm type' }= a.data_source
+      %td{ :class => 'alarm type' }= a.value
+      %td{ :class => 'alarm last_changed' }= a.updated_at
+      %td{ :class => 'alarm explore', :style => 'text-align: center' }= link_to '<img border=0 src="/images/page_right.gif"/>', "/explore/?host=#{CGI.escape(a.host)}&plugin=#{CGI.escape(a.plugin)}&type=#{CGI.escape(a.type)}&ds=#{CGI.escape(a.data_source)}"
+    - if a.severity != 'OKAY'
+      %tr
+        %td{ :class => 'alarm message', :colspan => '9' }
+          %div
+            = a.message

@@ -1,0 +1,315 @@
+body {
+  margin: 0px;
+  padding: 8px;
+  border: 0px;
+  font-family: Arial, Helvetica;
+  font-size: 12px;
+}
+
+form, h1, h2, h3 {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+h1 {
+  margin: 4px;
+}
+
+table.dashboards {
+	width: 1000px;
+}
+
+tr.dashboards.even {
+	background-color: #eeeeee;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+tr.dashboards.odd {
+	background-color: white;
+	font-size: 12px;
+}
+
+td.dashboards {
+	padding: 4px;
+}
+
+#dashboard_title, .dashboard_name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+#dashboard_graphs {
+  margin-top: 8px;
+}
+
+.dashboard_graph {
+  margin: 4px;
+  display: inline;
+}
+
+#dashboard_edit {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 2px;
+}
+
+#dashboard_time {
+  font-size: 10px;
+  margin: 2px 0px 0px 0px;
+}
+
+.dashboard_info {
+  font-size: 10px;
+}
+
+#dashboard_group, #dashboard_name {
+  width: 400px;
+  border: 1px dotted black;
+  padding: 2px;
+}
+
+#dashboard_query {
+  width: 800px;
+  border: 1px dotted black;
+  padding: 2px;
+}
+
+input {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+	text-decoration: underline;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	border-bottom: 1px dotted #bb242d;
+	background-color: #e0e0e0;
+}
+
+#body_right {
+	width: 200px;
+	float: right;
+	margin-right: 4px;
+}
+
+#body_left {
+}
+
+#body_footer {
+	clear: both;
+	padding: 8px;
+	text-align: right;
+	color: #dddddd;
+}
+
+#content_for_layout {
+  margin: 4px;
+}
+
+.explore_field_label {
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+#ajaxMessage {
+  font-size: 11px;
+  margin-bottom: 2px;
+  margin-left: 8px;
+  height: 16px;
+  float: left;
+}
+
+#explore_warning {
+  font-weight: bold;
+  color: red;
+}
+
+#explore_status {
+  font-size: 11px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#hosts, #plugins, #types, #dataSources {
+  font-size: 11px;
+}
+
+.sidebar {
+  border: 1px dotted black;
+  padding: 8px;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+.explore_input {
+  width: 250px;
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+
+#type.explore_input {
+  width: 400px;
+}
+
+#ds.explore_input {
+  width: 150px;
+}
+
+#explore_host_input {
+  float: left;
+  margin: 2px;
+  width: 250px;
+}
+
+#explore_plugin_input {
+  float: left;
+  margin: 2px;
+  width: 250px;
+}
+
+#explore_type_input {
+  float: left;
+  margin: 2px;
+  width: 400px;
+}
+
+#explore_ds_input {
+  float: left;
+  margin: 2px;
+  width: 150px;
+}
+
+#explore_throwable_signature_input {
+  float: left;
+  margin: 2px;
+  width: 250px;
+}
+
+#explore_rid_input {
+  float: left;
+  margin: 2px;
+  width: 250px;
+}
+
+#explore_source_input {
+  float: left;
+  margin: 2px;
+  width: 250px;
+}
+
+.alarm {
+  font-size: 11px;
+}
+
+.alarm.severity {
+  padding-left: 4px;
+  padding-right: 4px;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.alarm.host {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  white-space: pre;
+}
+
+.alarm.plugin {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  white-space: pre;
+}
+
+.alarm.plugin_instance {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  white-space: pre;
+}
+
+.alarm.type {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.alarm.type_instance {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.alarm.data_source {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.alarm.warning_range {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.alarm.critical_range {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.alarm.disabled {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.alarm.last_changed {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.alarm.explore {
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #ffffdd;
+  border-bottom: 1px solid black;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+}
+
+.alarm.message {
+  background-color: #ffffdd;;
+  border-bottom: 1px solid black;
+}

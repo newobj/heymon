@@ -1,0 +1,26 @@
+#dashboard_title== #{@dashboard.group} : #{@dashboard.name}
+- form_tag '', :method => :get do
+  #dashboard_time
+    == Time: #{Time.now.to_i}
+    == Start: #{text_field_tag 'start', @start, :size => 10 }
+    == End: #{text_field_tag 'end', @end, :size => 10 }
+    Consolidation:
+    =select_tag 'cons', options_for_select([['AVERAGE', 'AVERAGE'],['MIN','MIN'],['MAX','MAX']], @cons)
+    =check_box_tag 'auto_scale', 'checked', @auto_scale == 'checked'
+    Auto-Scale? 
+    =submit_tag 'Refresh'
+#dashboard_graphs
+  - @dashboard.each_graph_url do |graph_url|
+    .dashboard_graph== <img src="#{graph_url}&start=#{@start}&end=#{@end}&cons=#{@cons}&auto_scale=#{@auto_scale}"/>
+#dashboard_edit Edit Dashboard
+- form_for :dashboard, @dashboard, :url => { :action => :save, :id => @dashboard.id } do |d|
+  .dashboard_info Name
+  = d.text_field :name
+  .dashboard_info Group
+  = d.text_field :group
+  .dashboard_info Query
+  = d.text_area :query
+  %div &nbsp;
+  = submit_tag 'Save'
+  = submit_tag 'Delete'
+
