@@ -1,6 +1,22 @@
-heymon
+OVERVIEW
+=======
+
+Heymon is a Rails-based frontend for Collectd. It is an extraction of work performed during the development of Dotspots.com.
+
+AUTHOR
 ======
 
-heymon is a rails-based frontend for collectd.
+Brian Long 
+mailto:newobj@gmail.com
+mailto:brian@dotspots.com
 
-the author is brian long (newobj@gmail.com, brian@dotspots.com)
+INSTALLATION
+============
+
+1) Install the following gems:
+
+RRDtool
+right_aws
+haml
+
+2) 
