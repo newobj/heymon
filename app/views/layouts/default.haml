@@ -10,11 +10,11 @@
     #body_left
       - @controllers = { 'explorer' => '/explore', 'dashboards' => '/dashboard', 'alarms' => '/alarms', 'alarm defs' => '/alarms/defs' }
       %h1{ :style => 'display: inline' }
-        HEYMON.dotspots.com
+        HEYMON
       [
       - @controllers.each do |label, url|
         = link_to label, url
         = "|" if label != @controllers.keys.last 
       ]
       #content_for_layout= @content_for_layout
-    #body_footer== Privileged &amp; Confidential - DotSpots, Inc - #{ Time.now.year }
+    #body_footer== Privileged &amp; Confidential - #{ Time.now.year }

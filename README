@@ -1,22 +1,39 @@
 OVERVIEW
 =======
 
-Heymon is a Rails-based frontend for Collectd. It is an extraction of work performed during the development of Dotspots.com.
+Heymon is a Rails-based frontend for Collectd. Heymon's initial development was
+performed as an infrastructure project for Dotspots.com. DotSpots, Inc. has
+graciously agreed to release this code as open source.
 
-AUTHOR
+CREDITS
 ======
 
-Brian Long 
-mailto:newobj@gmail.com
-mailto:brian@dotspots.com
+Brian Long (newobj@gmail.com, brian@dotspots.com)
 
 INSTALLATION
 ============
 
 1) Install the following gems:
+   Note: I personally found it necessary to use version 1.3 of rrdtool-devel 
+         for compatibility with RubyRRDtool. [Brian Long]
 
-RRDtool
-right_aws
-haml
+  gem install right_aws
+  gem install haml
+  gem install RubyRRDtool
 
-2) 
+2) Install the gems for whatever database you plan on using, e.g. sqlite3. 
+   Note: use of sqlite3 in production is strongly discouraged.
+
+  gem install sqlite3-ruby
+
+3) Edit config/database.yml to suit your preferences
+
+4) Create heymon's databases
+
+  rake db:migrate
+
+5) Edit the heymon configuration (primarily to point to the location of collectd)
+
+  (edit config/heymon.yml)
+
+6) Start rails and you're off!
