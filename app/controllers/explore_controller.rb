@@ -31,6 +31,7 @@ class ExploreController < ApplicationController
 
 	def reload_rrds
 		RRD.load_all_rrds
+		redirect_to '/'
 	end
 
 	def index
