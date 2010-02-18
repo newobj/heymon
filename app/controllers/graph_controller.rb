@@ -34,7 +34,6 @@ class GraphController < ApplicationController
 			--width=1024 \
 			--alt-autoscale-max \
                         #{@auto_scale ? '--alt-autoscale --alt-y-grid' : '-lower-limit=0'} \
-			--watermark='DotSpots, Inc.' \
 			#{rrds}
 		");
 		response.headers['Content-Type'] = 'image/png'
