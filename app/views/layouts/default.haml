@@ -8,7 +8,7 @@
       = image_tag 'heymon.jpg', { :width => 200 }
       = render :partial => "sidebar"
     #body_left
-      - @controllers = { 'explorer' => '/explore', 'dashboards' => '/dashboard', 'alarms' => '/alarms', 'alarm defs' => '/alarms/defs' }
+      - @controllers = { 'explorer' => '/explore', 'dashboards' => '/dashboard' } # , 'alarms' => '/alarms', 'alarm defs' => '/alarms/defs' }
       %h1{ :style => 'display: inline' }
         HEYMON
       [
