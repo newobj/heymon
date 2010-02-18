@@ -26,7 +26,11 @@ INSTALLATION
 
   gem install sqlite3-ruby
 
-3) Edit config/database.yml to suit your preferences
+3) Edit config/environment.rb to point to your collectd installation.
+   Note: yes, the implication is that heymon must run on the same machine
+         as collectd.
+
+  COLLECTD_HOME = '<path to collectd installation>'
 
 4) Create heymon's databases
 
