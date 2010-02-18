@@ -16,6 +16,11 @@ Ruby on Rails including constituent parts prototype/scriptaculous - http://rubyo
 jQuery - http://jquery.com/
 Thickbox - http://jquery.com/demo/thickbox/
 
+SCREENSHOTS
+===========
+
+2010-02-17 : http://cloud.github.com/downloads/newobj/heymon/Picture_10.png
+
 INSTALLATION
 ============
 
@@ -32,18 +37,20 @@ INSTALLATION
 
   gem install sqlite3-ruby
 
-3) Edit config/environment.rb to point to your collectd installation.
-   Note: yes, the implication is that heymon must run on the same machine
-         as collectd.
+3) Edit your database configuration to your liking.
 
-  COLLECTD_HOME = '<path to collectd installation>'
+  (edit config/database.yml)
 
 4) Create heymon's databases
 
   rake db:migrate
 
-5) Edit the heymon configuration (primarily to point to the location of collectd)
+3) Edit config/environment.rb to point to your collectd installation.
+   Note: yes, the implication is that heymon must run on the same machine
+         as collectd.
 
-  (edit config/heymon.yml)
+  (edit config/environment.rb to change the following line)
+  COLLECTD_HOME = '<path to collectd installation>'
 
 6) Start rails and you're off!
+
