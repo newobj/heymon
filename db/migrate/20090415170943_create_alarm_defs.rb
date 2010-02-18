@@ -1,4 +1,4 @@
-# bin/collectd-nagios  -s /dist/collectd/collectd.sock -n mysql-Spider-FetchQueue/current-FetchQueueCount -d value -g none -H newspider.mysql.dotspots.com -c @10:~ -w @1:10
+# bin/collectd-nagios  -s #{COLLECTD_HOME}/collectd.sock -n mysql-Spider-FetchQueue/current-FetchQueueCount -d value -g none -H newspider.mysql.dotspots.com -c @10:~ -w @1:10
 
 class CreateAlarmDefs < ActiveRecord::Migration
   def self.up

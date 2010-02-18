@@ -15,7 +15,7 @@ task :alarms => :environment do
 		end
 		rrds.each do |rrd|
 				puts "[#{Time.now}]    Matched #{rrd.host}/#{rrd.plugin}/#{rrd.type}/#{rrd.data_source}"
-				cmd = "/dist/collectd/bin/collectd-nagios -s /dist/collectd/collectd.sock -n #{rrd.plugin}/#{rrd.type} -d #{rrd.data_source} -g none -H #{rrd.host} -c #{ad.critical_range} -w #{ad.warning_range}"
+				cmd = "#{COLLECTD_HOME}/bin/collectd-nagios -s #{COLLECTD_HOME}/collectd.sock -n #{rrd.plugin}/#{rrd.type} -d #{rrd.data_source} -g none -H #{rrd.host} -c #{ad.critical_range} -w #{ad.warning_range}"
 				puts "[#{Time.now}]    - #{cmd}"
 				result = IO.popen(cmd).gets
 				puts "[#{Time.now}]    - #{result}"
