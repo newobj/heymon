@@ -10,6 +10,12 @@ CREDITS
 
 Brian Long (newobj@gmail.com, brian@dotspots.com)
 
+Heymon's distribution includes:
+
+Ruby on Rails including constituent parts prototype/scriptaculous - http://rubyonrails.com
+jQuery - http://jquery.com/
+Thickbox - http://jquery.com/demo/thickbox/
+
 INSTALLATION
 ============
 
