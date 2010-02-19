@@ -1,9 +1,7 @@
 OVERVIEW
 =======
 
-Heymon is a Rails-based frontend for Collectd. Heymon's initial development was
-performed as an infrastructure project for Dotspots.com. DotSpots, Inc. has
-graciously agreed to release this code as open source.
+Heymon is a Rails-based frontend for Collectd. Heymon's initial development was performed as an infrastructure project for Dotspots.com. DotSpots, Inc. has graciously agreed to release this code as open source.
 
 CREDITS
 ======
@@ -12,9 +10,9 @@ Brian Long (newobj@gmail.com, brian@dotspots.com)
 
 Heymon's distribution includes:
 
-Ruby on Rails including constituent parts prototype/scriptaculous - http://rubyonrails.com
-jQuery - http://jquery.com/
-Thickbox - http://jquery.com/demo/thickbox/
+* Ruby on Rails including constituent parts prototype/scriptaculous - http://rubyonrails.com
+* jQuery - http://jquery.com/
+* Thickbox - http://jquery.com/demo/thickbox/
 
 SCREENSHOTS
 ===========
@@ -23,34 +21,28 @@ SCREENSHOTS
 
 INSTALLATION
 ============
-
-1) Install the following gems:
-   Note: I personally found it necessary to use version 1.3 of rrdtool-devel 
-         for compatibility with RubyRRDtool. [Brian Long]
+1. Install the following gems: NNote: I personally found it necessary to use version 1.3 of rrdtool-devel for compatibility with RubyRRDtool. [Brian Long]
 
   gem install right_aws
   gem install haml
   gem install RubyRRDtool
 
-2) Install the gems for whatever database you plan on using, e.g. sqlite3. 
-   Note: use of sqlite3 in production is strongly discouraged.
+2. Install the gems for whatever database you plan on using, e.g. sqlite3. Note: use of sqlite3 in production is strongly discouraged.
 
   gem install sqlite3-ruby
 
-3) Edit your database configuration to your liking.
+3. Edit your database configuration to your liking.
 
   (edit config/database.yml)
 
-4) Create heymon's databases
+4. Create heymon's databases
 
   rake db:migrate
 
-3) Edit config/environment.rb to point to your collectd installation.
-   Note: yes, the implication is that heymon must run on the same machine
-         as collectd.
+5. Edit config/environment.rb to point to your collectd installation.  Note: yes, the implication is that heymon must run on the same machine as collectd.
 
   (edit config/environment.rb to change the following line)
   COLLECTD_HOME = '<path to collectd installation>'
 
-6) Start rails and you're off!
+6. Start rails and you're off!
 
