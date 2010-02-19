@@ -22,27 +22,16 @@ SCREENSHOTS
 INSTALLATION
 ============
 1. Install the following gems: NNote: I personally found it necessary to use version 1.3 of rrdtool-devel for compatibility with RubyRRDtool. [Brian Long]
-
   gem install right_aws
   gem install haml
   gem install RubyRRDtool
-
 2. Install the gems for whatever database you plan on using, e.g. sqlite3. Note: use of sqlite3 in production is strongly discouraged.
-
   gem install sqlite3-ruby
-
 3. Edit your database configuration to your liking.
-
   (edit config/database.yml)
-
 4. Create heymon's databases
-
   rake db:migrate
-
 5. Edit config/environment.rb to point to your collectd installation.  Note: yes, the implication is that heymon must run on the same machine as collectd.
-
   (edit config/environment.rb to change the following line)
   COLLECTD_HOME = '<path to collectd installation>'
-
 6. Start rails and you're off!
-
