@@ -1,12 +1,12 @@
 OVERVIEW
 =======
 
-Heymon is a Rails-based frontend for Collectd. Heymon's initial development was performed as an infrastructure project for Dotspots.com. DotSpots, Inc. has graciously agreed to release this code as open source.
+Heymon is a Rails-based frontend for Collectd. Heymon's initial development was performed as an infrastructure project for <http://dotspots.com>. DotSpots, Inc. has graciously agreed to release this code as open source.
 
 CREDITS
 ======
 
-Brian Long (<newobj@gmail.com>, <brian@dotspots.com>, <http://newobj.net>))
+Brian Long (<newobj@gmail.com>, <brian@dotspots.com>, <http://newobj.net>)
 
 Heymon's distribution includes:
 
