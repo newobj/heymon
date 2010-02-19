@@ -6,7 +6,7 @@ Heymon is a Rails-based frontend for Collectd. Heymon's initial development was 
 CREDITS
 ======
 
-Brian Long - <newobj@gmail.com>, <brian@dotspots.com>, <http://newobj.net>
+Brian Long (<mailto:newobj@gmail.com>, <mailto:brian@dotspots.com>, <http://newobj.net>)
 
 Heymon's distribution includes:
 
