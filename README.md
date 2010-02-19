@@ -17,11 +17,11 @@ Heymon's distribution includes:
 SCREENSHOTS
 ===========
 
-2010-02-17 : http://cloud.github.com/downloads/newobj/heymon/Picture_10.png
+![Heymon Screenshot]http://cloud.github.com/downloads/newobj/heymon/Picture_10.png
 
 INSTALLATION
 ============
-1) Install the following gems: NNote: I personally found it necessary to use version 1.3 of rrdtool-devel for compatibility with RubyRRDtool. [Brian Long]
+1) Install the following gems: Note: I personally found it necessary to use version 1.3 of rrdtool-devel for compatibility with RubyRRDtool. [Brian Long]
     gem install right_aws
     gem install haml
     gem install RubyRRDtool
