@@ -17,7 +17,7 @@ Heymon's distribution includes:
 SCREENSHOTS
 ===========
 
-![Heymon Screenshot](http://30.media.tumblr.com/tumblr_ky28rxpNG71qz5uuvo1_500.jpg)
+<a href="http://cloud.github.com/downloads/newobj/heymon/Picture_10.png" target="_blank"><img border="0" src="http://30.media.tumblr.com/tumblr_ky2c5kTj041qz5uuvo1_500.png"/></a>
 
 INSTALLATION
 ============
