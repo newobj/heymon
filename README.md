@@ -10,9 +10,9 @@ Brian Long (newobj@gmail.com, brian@dotspots.com)
 
 Heymon's distribution includes:
 
-* Ruby on Rails including constituent parts prototype/scriptaculous - http://rubyonrails.com
-* jQuery - http://jquery.com/
-* Thickbox - http://jquery.com/demo/thickbox/
+* Ruby on Rails including constituent parts prototype/scriptaculous - <http://rubyonrails.com>
+* jQuery - <http://jquery.com/>
+* Thickbox - <http://jquery.com/demo/thickbox/>
 
 SCREENSHOTS
 ===========
@@ -31,6 +31,6 @@ INSTALLATION
     (edit config/database.yml)
 4) Create heymon's databases
     rake db:migrate
-5) Edit config/environment.rb to point to your collectd installation.  Note: yes, the implication is that heymon must run on the same machine as collectd.
+5) Edit `config/environment.rb` to point to your collectd installation.  Note: yes, the implication is that heymon must run on the same machine as collectd.
     COLLECTD_HOME = '<path to collectd installation>' # (edit config/environment.rb to change the following line)
 6) Start rails and you're off!
