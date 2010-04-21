@@ -12,7 +12,7 @@ class GraphController < ApplicationController
 	end
 
 	def index
-		all_rrds = RRD.find_all
+		all_rrds = RRDH.find_all
 		matched_rrds = filter_rrds all_rrds, params[:host], params[:plugin], params[:type], params[:ds]
 		@start = params[:start] || '-3600'
 		@end = params[:end] || '-0'

@@ -5,7 +5,7 @@ class ExploreController < ApplicationController
 	layout 'default', :except => [ :json ]
 
 	def json
-		all_rrds = RRD.find_all
+		all_rrds = RRDH.find_all
 
 		@matched_rrds =  filter_rrds all_rrds, params[:host], params[:plugin], params[:type], params[:ds]
 		host_rrds = filter_rrds all_rrds, nil, params[:plugin], params[:type], params[:ds]
@@ -30,7 +30,7 @@ class ExploreController < ApplicationController
 	end
 
 	def reload_rrds
-		RRD.load_all_rrds
+		RRDH.load_all_rrds
 		redirect_to '/'
 	end
 
