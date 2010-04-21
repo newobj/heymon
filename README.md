@@ -1,3 +1,12 @@
+FORK-NOTICE
+==========
+
+- upgraded to rails 2.3.5
+- removed RubyRRDTool dependency and use the original RRDTool Ruby Bindings instead
+
+Thanks for the pre-work, it's a cool idea to manage lots of RRDs.
+
+
 OVERVIEW
 =======
 
