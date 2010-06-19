@@ -1,12 +1,3 @@
-FORK-NOTICE
-==========
-
-- upgraded to rails 2.3.5
-- removed RubyRRDTool dependency and use the original RRDTool Ruby Bindings instead
-
-Thanks for the pre-work, it's a cool idea to manage lots of RRDs.
-
-
 OVERVIEW
 =======
 
@@ -15,10 +6,13 @@ Heymon is a Rails-based frontend for Collectd. Heymon's initial development was 
 CREDITS
 ======
 
+Original Author:
 Brian Long (<mailto:newobj@gmail.com>, <mailto:brian@dotspots.com>, <http://newobj.net>)
 
-Heymon's distribution includes:
+Contributors:
+chrispy (http://github.com/chrispy)
 
+Heymon's distribution includes:
 * Ruby on Rails including constituent parts prototype/scriptaculous - <http://rubyonrails.com>
 * jQuery - <http://jquery.com/>
 * Thickbox - <http://jquery.com/demo/thickbox/>
@@ -30,10 +24,10 @@ SCREENSHOTS
 
 INSTALLATION
 ============
-1) Install the following gems: Note: I personally found it necessary to use version 1.3 of rrdtool-devel for compatibility with RubyRRDtool. [Brian Long]
+1) Install the following gems:
     gem install right_aws
     gem install haml
-    gem install RubyRRDtool
+    gem install RRDTool
 2) Install the gems for whatever database you plan on using, e.g. sqlite3. Note: use of sqlite3 in production is strongly discouraged.
     gem install sqlite3-ruby
 3) Edit your database configuration to your liking.
