@@ -10,7 +10,7 @@ Original Author:
 Brian Long (<mailto:newobj@gmail.com>, <mailto:brian@dotspots.com>, <http://newobj.net>)
 
 Contributors:
-chrispy (http://github.com/chrispy)
+chrispy (<http://github.com/chrispy>)
 
 Heymon's distribution includes:
 * Ruby on Rails including constituent parts prototype/scriptaculous - <http://rubyonrails.com>
@@ -27,7 +27,9 @@ INSTALLATION
 1) Install the following gems:
     gem install right_aws
     gem install haml
-2) Install RRDtool (http://oss.oetiker.ch/rrdtool/), and make sure to enter bindings/ruby and install the ruby bindings as well.
+2) Install RRDtool:
+   <http://oss.oetiker.ch/rrdtool/>
+   Make sure to enter bindings/ruby and install the ruby bindings as well.
 3) Install the gems for whatever database you plan on using, e.g. sqlite3. Note: use of sqlite3 in production is strongly discouraged.
     gem install sqlite3-ruby
 4) Edit your database configuration to your liking.
