@@ -1,11 +1,7 @@
-#require 'RRDtool'
+require 'RRD'
 
 desc "Dumps info on all the rrds owned by collectd"
 task :rrd_info => :environment do
-	puts "COLLECTD_HOME = #{COLLECTD_HOME}"
-	COLLECTD_RRD = "#{COLLECTD_HOME}/var/lib/collectd/"
-	puts "COLLECTD_RRD = #{COLLECTD_RRD}"
-
 	hosts = []
 
 	Dir.foreach COLLECTD_RRD do |file|
@@ -21,8 +17,8 @@ task :rrd_info => :environment do
 			Dir.foreach plugin_rrd do |type|
 				next if type === '.' or type == '..'
 				rrd_path = "#{COLLECTD_RRD}/#{host}/#{plugin}/#{type}" #.gsub /\.rrd$/, ""
-				rrd = RRDtool.new(rrd_path)
-				data_sources = rrd.info.keys.inject [] do |ds,key|
+				rrd_info = RRD.info(rrd_path)
+				data_sources = rrd_info.keys.inject [] do |ds,key|
 					ds << $1 if  /^ds\[([^\\]+)\]/ =~ key
 					ds
 				end

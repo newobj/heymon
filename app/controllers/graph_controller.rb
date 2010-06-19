@@ -22,10 +22,10 @@ class GraphController < ApplicationController
 		matched_rrds.each_index do |index|
 			rrd = matched_rrds[index]
 			graph = "LINE" # index == 0 ? "AREA" : "STACK"
-			rrds = rrds + "DEF:metric#{index}='#{COLLECTD_HOME}/var/lib/collectd/#{rrd.host}/#{rrd.plugin}/#{rrd.type}.rrd':#{rrd.data_source}:#{@cons} #{graph}:metric#{index}#{graph_index_color(index)}:'#{rrd.host}/#{rrd.plugin}/#{rrd.type}/#{rrd.data_source}' "
+			rrds = rrds + "DEF:metric#{index}='#{COLLECTD_RRD}/#{rrd.host}/#{rrd.plugin}/#{rrd.type}.rrd':#{rrd.data_source}:#{@cons} #{graph}:metric#{index}#{graph_index_color(index)}:'#{rrd.host}/#{rrd.plugin}/#{rrd.type}/#{rrd.data_source}' "
 		end
 		rrdtool_proc = IO.popen("
-			/usr/bin/rrdtool graph - \
+			#{RRDTOOL_BIN} graph - \
 			--imgformat=PNG \
 			--start=#{@start} \
 			--end=#{@end} \

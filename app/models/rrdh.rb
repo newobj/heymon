@@ -11,10 +11,10 @@ class RRDH
 	end
 
 	def self.load_all_rrds
-		collectd_rrd_path = "#{COLLECTD_HOME}/var/lib/collectd/"
+		collectd_rrd_path = COLLECTD_RRD
 		rrds = []
 		Dir.foreach collectd_rrd_path do |host|
-			next if host == '.' or host == '..'
+			next if host == '.' or host == '..' 
 			host_rrd = "#{collectd_rrd_path}/#{host}"
 			Dir.foreach host_rrd do |plugin|
 				next if plugin == '.' or plugin == '..'
