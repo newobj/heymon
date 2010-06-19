@@ -27,9 +27,7 @@ INSTALLATION
 1) Install the following gems:
     gem install right_aws
     gem install haml
-2) Install RRDtool:
-    <http://oss.oetiker.ch/rrdtool/>
-   Make sure to enter bindings/ruby and install the ruby bindings as well.
+2) Install RRDtool: <http://oss.oetiker.ch/rrdtool/> Make sure to enter bindings/ruby and install the ruby bindings as well.
 
 3) Install the gems for whatever database you plan on using, e.g. sqlite3. Note: use of sqlite3 in production is strongly discouraged.
     gem install sqlite3-ruby
