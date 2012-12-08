@@ -7,7 +7,7 @@ CREDITS
 ======
 
 Original Author:
-Brian Long (<mailto:newobj@gmail.com>, <mailto:brian@dotspots.com>, <http://newobj.net>)
+Brian Long <mailto:newobj@gmail.com>
 
 Contributors:
 chrispy (<http://github.com/chrispy>)
